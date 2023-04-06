@@ -1,4 +1,6 @@
-# create azure frontdoor standard origin group
+### create azure frontdoor standard origin group
+
+```text
 az afd origin-group create -g test \
       --origin-group-name origin-group \
       --profile-name test \
@@ -9,9 +11,11 @@ az afd origin-group create -g test \
       --sample-size 4 \
       --successful-samples-required 3 \
       --additional-latency-in-milliseconds 500
+```
 
+### create azure frontdoor standard origin in the origin group
 
-# create azure frontdoor standard origin in the origin group
+```bash
 az afd origin create -g group \
       --host-name example.contoso.com \
       --profile-name profile \
@@ -23,3 +27,4 @@ az afd origin create -g group \
       --enabled-state Enabled \
       --http-port 80 \
       --https-port 443
+```
