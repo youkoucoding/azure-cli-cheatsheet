@@ -30,7 +30,7 @@ az afd origin create -g group \
 ```
 
 
-### cteate endpoint
+### create endpoint
 ```bash
 az afd endpoint create --endpoint-name  \
                        --profile-name   \
@@ -38,4 +38,21 @@ az afd endpoint create --endpoint-name  \
                        [--enabled-state {Disabled, Enabled}] \
                        [--name-reuse-scope {NoReuse, ResourceGroupReuse, SubscriptionReuse, TenantReuse}] \
                        [--tags] \
+```
+
+
+### create routes
+
+```bash
+az afd route create -g group \
+        --endpoint-name endpoint1 \
+        --profile-name profile \
+        --route-name route1 \
+        --patterns-to-match /test1/* /tes2/* \
+        --origin-group og001 \
+        --supported-protocols Http Https \
+        --custom-domains cd001 \
+        --forwarding-protocol MatchRequest \
+        --https-redirect Enabled \
+        --link-to-default-domain Enabled
 ```
