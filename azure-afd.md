@@ -28,3 +28,14 @@ az afd origin create -g group \
       --http-port 80 \
       --https-port 443
 ```
+
+
+### cteate endpoint
+```bash
+az afd endpoint create --endpoint-name  \
+                       --profile-name   \
+                       --resource-group \
+                       [--enabled-state {Disabled, Enabled}] \
+                       [--name-reuse-scope {NoReuse, ResourceGroupReuse, SubscriptionReuse, TenantReuse}] \
+                       [--tags] \
+```
